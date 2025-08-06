@@ -1,0 +1,259 @@
+/* Estilos PNP Perú - Verde institucional */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #004d00 0%, #006400 50%, #228B22 100%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+.container {
+  background: white;
+  padding: 2.5rem 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 100, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  animation: slideIn 0.8s ease forwards;
+  border: 3px solid #006400;
+}
+
+.bienvenida {
+  background: linear-gradient(135deg, #004d00 0%, #006400 50%, #228B22 100%);
+}
+
+.bienvenida .container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 3px solid #006400;
+}
+
+.bienvenida h1 {
+  font-size: 2.5rem;
+  color: #006400;
+  margin-bottom: 0.5rem;
+  animation: fadeIn 2s;
+  text-shadow: 2px 2px 4px rgba(0, 100, 0, 0.3);
+}
+
+.bienvenida p {
+  font-size: 1.2rem;
+  color: #228B22;
+  margin-bottom: 2rem;
+}
+
+.oculto {
+  display: none;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.75rem;
+  background-color: #006400;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 100, 0, 0.4);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background-color: #228B22;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(34, 139, 34, 0.6);
+}
+
+#opciones button {
+  display: block;
+  width: 100%;
+  margin: 0.6rem 0;
+  background-color: #f0f8f0;
+  color: #006400;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 100, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 2px solid #90EE90;
+}
+
+#opciones button:hover:not(:disabled) {
+  background-color: #e8f5e8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 100, 0, 0.3);
+  border-color: #006400;
+}
+
+#opciones button.seleccionado.correcto {
+  background-color: #006400;
+  color: white;
+  box-shadow: 0 2px 12px rgba(0, 100, 0, 0.7);
+  border-color: #006400;
+}
+
+#opciones button.seleccionado.incorrecto {
+  background-color: #8B0000;
+  color: white;
+  box-shadow: 0 2px 12px rgba(139, 0, 0, 0.7);
+  border-color: #8B0000;
+}
+
+#opciones button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.barra-carga {
+  width: 100%;
+  height: 8px;
+  background: rgba(0, 100, 0, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.progreso {
+  height: 100%;
+  background: linear-gradient(90deg, #006400, #32CD32);
+  width: 0%;
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+#tiempo {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #006400;
+}
+
+#timer {
+  color: #006400;
+  font-weight: 700;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  color: #006400;
+}
+
+#pregunta {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #006400;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+#progreso {
+  height: 12px;
+  background-color: #e8f5e8;
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0,100,0,0.1);
+}
+
+#progreso::after {
+  content: "";
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #006400, #32CD32);
+  width: var(--width, 0%);
+  transition: width 0.4s ease;
+  border-radius: 12px;
+}
+
+.resultado-final-container {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f0f8f0 0%, #e8f5e8 100%);
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+  border: 2px solid #006400;
+  box-shadow: 0 4px 15px rgba(0, 100, 0, 0.3);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #006400;
+  text-align: center;
+}
+
+.resultado-final-container h2 {
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 1.8rem;
+    width: 95%;
+    margin: 1rem;
+  }
+  
+  button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  
+  .bienvenida h1 {
+    font-size: 1.8rem;
+  }
+  
+  #pregunta {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .container {
+    padding: 2rem;
+  }
+}
